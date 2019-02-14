@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-const PasswordForget = () => {
+const PasswordForgetPage = () => {
 
   return(
     <Fragment>
-      <h3>PasswordForget</h3>
+      <h3>PasswordForgetPage</h3>
     </Fragment>
   );
 }
 
-export default PasswordForget;
+export default PasswordForgetPage;

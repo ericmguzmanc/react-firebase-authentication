@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-const Home = () => {
+const HomePage = () => {
 
   return(
     <Fragment>
-      <h3>Home</h3>
+      <h3>HomePage</h3>
     </Fragment>
   );
 }
 
-export default Home;
+export default HomePage;

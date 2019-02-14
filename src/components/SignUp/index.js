@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-const SignUp = () => {
+const SignUpPage = () => {
 
   return(
     <Fragment>
-      <h3>SignUp</h3>
+      <h3>SignUpPage</h3>
     </Fragment>
   );
 }
 
-export default SignUp;
+export default SignUpPage;

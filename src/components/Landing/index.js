@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-const Landing = () => {
+const LandingPage = () => {
 
   return(
     <Fragment>
-      <h3>Landing</h3>
+      <h3>LandingPage</h3>
     </Fragment>
   );
 }
 
-export default Landing;
+export default LandingPage;
