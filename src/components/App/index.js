@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Navigation from '../Navigation';
 
 const App = () => {
   return(
-    <Fragment>
-      <h2>React Firebase Authentication</h2>
-    </Fragment>
+    <Router>
+      <Navigation />
+    </Router>
   );
 }
 
