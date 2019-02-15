@@ -1,6 +1,11 @@
 .rlink {
   font-family: 'Open Sans';
   text-decoration: none !important;
-  font-weight: bold;
   color: white !important;
+  padding: 10px;
+}
+
+.rlink:hover {
+  color:gray;
+  opacity: 0.8;
 }
