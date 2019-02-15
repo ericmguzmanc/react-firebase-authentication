@@ -16,10 +16,8 @@ const Navigation = (props) => {
 
   return(
     <div>
-      <Navbar color="dark" light expand="md">
-        <NavbarBrand>
-          <Link to={ROUTES.HOME} className="rlink">Home</Link>
-        </NavbarBrand>
+      <Navbar color="dark" light expand="md" className="main-navbar">
+        <NavbarBrand href="/">React Firebase Authentication</NavbarBrand>
         <NavbarToggler />
         <Collapse navbar>
           <Nav className="ml-auto" navbar>

@@ -1,12 +1,17 @@
 import React, { Fragment, PureComponent } from 'react';
 import { Link } from 'react-router-dom';
+import { 
+  Form, Input, FormGroup, Button, Alert,
+  Card, CardBody, CardText
+} from 'reactstrap';
+
+import '../styles/common.css';
 
 import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = (props) => {
   return(
     <Fragment>
-      <h3>SignUpPage</h3>
       <SignUpForm />
     </Fragment>
   );
@@ -54,41 +59,55 @@ class SignUpForm extends PureComponent {
       username === '';
 
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input 
-            name="username"
-            value={username}
-            onChange={this.onChange}
-            type="text"
-            placeholder="Full Name"
-            />
-          <input 
-            name="email"
-            value={email}
-            onChange={this.onChange}
-            type="text"
-            placeholder="Email Address"
-            />
-          <input 
-            name="passwordOne"
-            value={passwordOne}
-            onChange={this.onChange}
-            type="password"
-            placeholder="Password"
-            />
-          <input 
-            name="passwordTwo"
-            value={passwordTwo}
-            onChange={this.onChange}
-            type="password"
-            placeholder="Confirm Password"
-            />
+      <div className="container-fluid">
+        <Card className="form-card signup-card">
+          <CardBody className="text-center">
+            <CardText>Sign Up</CardText>
+            <Form onSubmit={this.onSubmit}>
+              <FormGroup>
+                <Input 
+                  name="username"
+                  value={username}
+                  onChange={this.onChange}
+                  type="text"
+                  placeholder="Full Name"
+                  />
+              </FormGroup>
+              <FormGroup>
+                <Input 
+                  name="email"
+                  value={email}
+                  onChange={this.onChange}
+                  type="text"
+                  placeholder="Email Address"
+                  />
+              </FormGroup>
+              <FormGroup>
+                <Input 
+                  name="passwordOne"
+                  value={passwordOne}
+                  onChange={this.onChange}
+                  type="password"
+                  placeholder="Password"
+                  />
+              </FormGroup>
+              <FormGroup>
+                <Input 
+                  name="passwordTwo"
+                  value={passwordTwo}
+                  onChange={this.onChange}
+                  type="password"
+                  placeholder="Confirm Password"
+                  />
+              </FormGroup>
 
-          <button disabled={isInvalid} type="submit">Sign Up</button>
+              <Button disabled={isInvalid} type="submit">Sign Up</Button>
 
-          { error && <p>{ error.message }</p> }
-        </form>
+              { error && <Alert>{ error.message }</Alert> }
+              
+            </Form>
+          </CardBody>
+        </Card>
       </div>
     );
   }
