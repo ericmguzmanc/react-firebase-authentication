@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { 
   Form, Input, FormGroup, Button, Alert,
   Card, CardBody, CardText
@@ -36,11 +36,12 @@ class SignUpFormBase extends PureComponent {
 
   onSubmit = event => {
     const { username, email, passwordOne } = this.state;
-    
+
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
+        this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
         this.setState({ error });
@@ -113,7 +114,7 @@ class SignUpFormBase extends PureComponent {
                   />
               </FormGroup>
 
-              <Button disabled={isInvalid} type="submit">Sign Up</Button>
+              <Button disabled={isInvalid} type="button" onClick={() => this.onSubmit()}>Sign Up</Button>
 
               { error && <Alert>{ error.message }</Alert> }
               
@@ -132,7 +133,7 @@ const SignUpLink = () => (
   </p>
 );
 
-const SignUpForm = withFirebase(SignUpFormBase);
+const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 
 export default SignUpPage;
 
