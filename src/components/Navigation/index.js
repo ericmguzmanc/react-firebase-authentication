@@ -10,6 +10,7 @@ import {
   NavItem } from 'reactstrap';
 
 import '../styles/common.css';
+import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes'; 
 
 const Navigation = (props) => {
@@ -22,19 +23,32 @@ const Navigation = (props) => {
         <Collapse navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <Link to={ROUTES.SIGN_IN} className="rlink">Sign In</Link>
+              <div className="navItem-li">
+                <Link to={ROUTES.SIGN_IN} className="rlink">Sign In</Link>
+              </div>
             </NavItem>
             <NavItem>
-              <Link to={ROUTES.LANDING} className="rlink">Landing</Link>
+              <div className="navItem-li">
+                <Link to={ROUTES.LANDING} className="rlink">Landing</Link>
+              </div>
             </NavItem>
             <NavItem>
-              <Link to={ROUTES.HOME} className="rlink">Home</Link>
+              <div className="navItem-li">
+                <Link to={ROUTES.HOME} className="rlink">Home</Link>
+              </div>
             </NavItem>
             <NavItem>
-              <Link to={ROUTES.ACCOUNT} className="rlink">Account</Link>
+              <div className="navItem-li">
+                <Link to={ROUTES.ACCOUNT} className="rlink">Account</Link>
+              </div>
             </NavItem>
             <NavItem>
-              <Link to={ROUTES.ADMIN} className="rlink">Admin</Link>
+              <div className="navItem-li">
+                <Link to={ROUTES.ADMIN} className="rlink">Admin</Link>
+              </div>
+            </NavItem>
+            <NavItem>
+              <SignOutButton />
             </NavItem>
           </Nav>
         </Collapse>

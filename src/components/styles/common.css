@@ -36,3 +36,9 @@ input, button {
   margin-top: 15px;
   border-radius: 15px;
 }
+
+.navItem-li {
+  height: 35px;
+  display: table-cell;
+  vertical-align: middle;
+}

@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { Button } from 'reactstrap';
 
-const SignOutPage = () => {
+import { withFirebase } from '../Firebase';
 
-  return(
-    <Fragment>
-      <h3>SignOutPage</h3>
-    </Fragment>
-  );
-}
+const SignOutButton = ({ firebase }) => (
+  <Button onClick={firebase.doSignOut}>
+    Sign Out
+  </Button>
+);
 
-export default SignOutPage;
+export default withFirebase(SignOutButton);
