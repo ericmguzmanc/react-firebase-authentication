@@ -1,5 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
 import { 
   Form, Input, FormGroup, Button, Alert,
   Card, CardBody, CardText
@@ -36,7 +37,6 @@ class SignUpFormBase extends PureComponent {
 
   onSubmit = event => {
     const { username, email, passwordOne } = this.state;
-
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
@@ -116,7 +116,7 @@ class SignUpFormBase extends PureComponent {
 
               <Button disabled={isInvalid} type="button" onClick={() => this.onSubmit()}>Sign Up</Button>
 
-              { error && <Alert>{ error.message }</Alert> }
+              { error && <Alert className="alert-bt" color="danger">{ error.message }</Alert> }
               
             </Form>
           </CardBody>
@@ -133,7 +133,10 @@ const SignUpLink = () => (
   </p>
 );
 
-const SignUpForm = withRouter(withFirebase(SignUpFormBase));
+const SignUpForm = compose(
+  withRouter,
+  withFirebase
+)(SignUpFormBase); 
 
 export default SignUpPage;
 

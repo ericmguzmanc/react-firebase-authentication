@@ -31,3 +31,8 @@
 input, button {
   border-radius: 15px !important;
 }
+
+.alert-bt {
+  margin-top: 15px;
+  border-radius: 15px;
+}
