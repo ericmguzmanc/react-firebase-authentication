@@ -36,18 +36,16 @@ class SignUpFormBase extends PureComponent {
 
 
   onSubmit = event => {
-    const { username, email, passwordOne } = this.state;
+    const { email, passwordOne } = this.state;
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.SIGN_IN);
       })
       .catch(error => {
         this.setState({ error });
       });
-
-    event.preventDefault();
   };
 
   onChange = event => {
@@ -76,7 +74,7 @@ class SignUpFormBase extends PureComponent {
         <Card className="form-card signup-card">
           <CardBody className="text-center">
             <CardText>Sign Up</CardText>
-            <Form onSubmit={this.onSubmit}>
+            <Form>
               <FormGroup>
                 <Input 
                   name="username"
@@ -128,9 +126,11 @@ class SignUpFormBase extends PureComponent {
 }
 
 const SignUpLink = () => (
-  <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-  </p>
+  <div style={{marginTop:"10px"}}>
+    <p>
+      Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    </p>
+  </div>
 );
 
 const SignUpForm = compose(
