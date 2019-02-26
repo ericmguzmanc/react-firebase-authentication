@@ -11,7 +11,7 @@ import '../styles/common.css';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
-const SignUpPage = (props) => {
+const SignUpPage = () => {
   return(
     <Fragment>
       <SignUpForm />
@@ -35,7 +35,7 @@ class SignUpFormBase extends PureComponent {
   }
 
 
-  onSubmit = event => {
+  onSubmit = () => {
     const { email, passwordOne } = this.state;
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)

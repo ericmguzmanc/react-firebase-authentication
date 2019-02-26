@@ -5,11 +5,11 @@ import { Form, Card, CardBody, CardText,
 FormGroup, Input, Button, Alert } from 'reactstrap';
 
 import { SignUpLink } from '../SignUp';
+import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
 const SignInPage = () => {
-
   return(
     <Fragment>
       <h3>SignInPage</h3>
@@ -57,37 +57,38 @@ class SignInFormBase extends PureComponent {
 
     return (
       <Card className="form-card signup-card">
-          <CardBody className="text-center">
-            <CardText>Sign In</CardText>
-            <Form>
-              <FormGroup>
-                <Input 
-                  name="email"
-                  value={email}
-                  onChange={this.onChange}
-                  type="text"
-                  placeholder="Email Address"
-                  />
-              </FormGroup>
-              <FormGroup>
-                <Input 
-                  name="password"
-                  value={password}
-                  onChange={this.onChange}
-                  type="password"
-                  placeholder="Password"
-                  />
-              </FormGroup>
+        <CardBody className="text-center">
+          <CardText>Sign In</CardText>
+          <Form>
+            <FormGroup>
+              <Input 
+                name="email"
+                value={email}
+                onChange={this.onChange}
+                type="text"
+                placeholder="Email Address"
+                />
+            </FormGroup>
+            <FormGroup>
+              <Input 
+                name="password"
+                value={password}
+                onChange={this.onChange}
+                type="password"
+                placeholder="Password"
+                />
+            </FormGroup>
 
-              <Button disabled={isInvalid} type="button" onClick={() => this.onSubmit()}>Sign In</Button>
+            <Button disabled={isInvalid} type="button" onClick={() => this.onSubmit()}>Sign In</Button>
 
-              <SignUpLink />   
+            <SignUpLink />   
+            <PasswordForgetLink />
 
-              { error && <Alert className="alert-bt" color="danger">{ error.message }</Alert> }
-              
-            </Form>
-          </CardBody>
-        </Card>
+            { error && <Alert className="alert-bt" color="danger">{ error.message }</Alert> }
+            
+          </Form>
+        </CardBody>
+      </Card>
     );
   }
 }
