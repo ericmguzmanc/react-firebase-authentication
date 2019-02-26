@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 
+import { withAuthorization } from '../Session';
+
 const HomePage = () => {
 
   return(
@@ -9,4 +11,6 @@ const HomePage = () => {
   );
 }
 
-export default HomePage;
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(HomePage);
