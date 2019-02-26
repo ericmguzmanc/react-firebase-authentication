@@ -12,9 +12,17 @@ import {
 import '../styles/common.css';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes'; 
+import { AuthUserContext } from '../Session';
 
-const Navigation = ({ authUser }) => (
-  <Fragment>{ authUser ? <NavigationAuth /> : <NavigationNonAuth />}</Fragment>
+const Navigation = () => (
+  <Fragment>
+    <AuthUserContext.Consumer>
+      { 
+        authUser => 
+        authUser ? <NavigationAuth /> : <NavigationNonAuth />
+      }
+    </AuthUserContext.Consumer>
+  </Fragment>
 );
 
 
