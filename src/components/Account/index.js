@@ -1,12 +1,17 @@
 import React, { Fragment } from 'react';
 
-const Account = () => {
+import { PasswordForgetForm } from '../PasswordForget';
+import PasswordChangeForm from '../PasswordChange';
+
+const AccountPage = () => {
 
   return(
     <Fragment>
       <h3>Account</h3>
+      <PasswordForgetForm />
+      <PasswordChangeForm />
     </Fragment>
   );
 }
 
-export default Account;
+export default AccountPage;
