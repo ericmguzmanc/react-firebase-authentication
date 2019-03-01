@@ -2,18 +2,20 @@ import React, { Fragment } from 'react';
 
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
-import { withAuthorization } from '../Session';
+import { AuthUserContext, withAuthorization } from '../Session';
 
-const AccountPage = () => {
+const AccountPage = () => (
+  <AuthUserContext.Consumer>
+    {authUser => (
+      <Fragment>
+        <h3>Account: {authUser.email}</h3>
+        <PasswordForgetForm />
+        <PasswordChangeForm />
+      </Fragment>
+    )}
+  </AuthUserContext.Consumer>
+);
 
-  return(
-    <Fragment>
-      <h3>Account</h3>
-      <PasswordForgetForm />
-      <PasswordChangeForm />
-    </Fragment>
-  );
-}
 
 const condition = authUser => !!authUser;
 
