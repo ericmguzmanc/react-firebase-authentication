@@ -42,3 +42,8 @@ input, button {
   display: table-cell;
   vertical-align: middle;
 }
+
+.list-group-item {
+  border-radius: 17px !important;
+  margin: 5px;
+}

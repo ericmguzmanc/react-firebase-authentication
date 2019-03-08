@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 import { Card, CardBody, CardText, Button, FormGroup,
 Form, Input, Alert } from 'reactstrap';
@@ -10,15 +10,6 @@ const INITIAL_STATE = {
   passwordTwo: '',
   error: null,
 };
-
-// const PasswordChangePage = () => {
-
-//   return(
-//     <Fragment>
-//       <h3>PasswordChangePage</h3>
-//     </Fragment>
-//   );
-// }
 
 class PasswordChangeForm extends PureComponent {
   constructor(props) {
